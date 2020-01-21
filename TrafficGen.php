@@ -106,7 +106,7 @@ function fetch_proxies( $type ) {
 }
 
 function rand_proxy() {
-	$html        = file_get_contents('http://localhost/proxyapi/api.php?type=google');
+	$proxies        = fetch_proxies('ssl');
 	$key         = rand(0,25);
 	$proxy       = $proxies[$key];
 	while(!check_proxy($proxy)) {
